@@ -13,6 +13,9 @@
   :description "Getting at system load information from Lisp"
   :homepage "https://github.com/Shinmera/system-load"
   :serial T
-  :components ((:file "system-load")
+  :components ((:file "package")
+               (:file "toolkit")
+               #+linux (:file "linux")
+               #-(or linux) (:file "unsupported")
                (:file "documentation"))
   :depends-on ())

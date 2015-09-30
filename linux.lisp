@@ -4,35 +4,7 @@
  Author: Nicolas Hafner <shinmera@tymoon.eu>
 |#
 
-(in-package #:cl-user)
-(defpackage #:system-load
-  (:nicknames #:org.shirakumo.system-load)
-  (:use #:cl)
-  (:export
-   #:cpu-usages
-   #:cpu-usage
-   #:ram-total
-   #:ram-free
-   #:ram-usage
-   #:swap-total
-   #:swap-free
-   #:swap-usage
-   #:mem-total
-   #:mem-free
-   #:mem-usage))
 (in-package #:org.shirakumo.system-load)
-
-(defun split (string splitter)
-  (let ((parts ())
-        (stream (make-string-output-stream)))
-    (loop for char across string
-          do (if (char= char splitter)
-                 (let ((string (get-output-stream-string stream)))
-                   (when (< 0 (length string))
-                     (push string parts)))
-                 (write-char char stream))
-          finally (push (get-output-stream-string stream) parts))
-    (nreverse parts)))
 
 (defun /proc/stat ()
   (with-open-file (stream "/proc/stat" :direction :input)

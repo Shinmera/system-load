@@ -10,7 +10,9 @@
   :author "Nicolas Hafner <shinmera@tymoon.eu>"
   :maintainer "Nicolas Hafner <shinmera@tymoon.eu>"
   :description "Getting at system load information from Lisp"
-  :homepage "https://github.com/Shinmera/system-load"
+  :homepage "https://Shinmera.github.io/system-load/"
+  :bug-tracker "https://github.com/Shinmera/system-load/issues"
+  :source-control (:git "https://github.com/Shinmera/system-load.git")
   :serial T
   :components ((:file "package")
                (:file "toolkit")
